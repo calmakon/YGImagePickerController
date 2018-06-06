@@ -71,16 +71,16 @@
 
     //系统相册
     PHFetchResult * systemAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-    NSLog(@"智能相册个数：%lu",(unsigned long)systemAlbums.count);
+    //NSLog(@"智能相册个数：%lu",(unsigned long)systemAlbums.count);
     //自定义相册
     PHFetchResult * customAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
-    NSLog(@"用户相册个数：%lu",(unsigned long)customAlbums.count);
+    //NSLog(@"用户相册个数：%lu",(unsigned long)customAlbums.count);
 
     [systemAlbums enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         PHAssetCollection * col = (PHAssetCollection *)obj;
         YGPhotoAlbum * album = [YGPhotoAlbum new];
         PHFetchResult * res = [PHAsset fetchAssetsInAssetCollection:col options:nil];
-        if (res.count != 0 && ![col.localizedTitle isEqualToString:@"最近删除"]) {
+        if (res.count != 0 && (![col.localizedTitle containsString:@"Deleted"] || ![col.localizedTitle containsString:@"最近删除"] || ![col.localizedTitle containsString:@"Hidden"] || ![col.localizedTitle containsString:@"已隐藏"])) {
             album.resource = res;
             album.title = col.localizedTitle;
             album.count = res.count;
@@ -90,7 +90,8 @@
 
     [albums enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         YGPhotoAlbum * album = (YGPhotoAlbum *)obj;
-        if ([album.title isEqualToString:@"相机胶卷"]) {
+        if ([album.title containsString:@"Camera Roll"] ||
+            [album.title containsString:@"相机胶卷"]) {
             YGPhotoAlbum * album0 = albums[0];
             albums[0] = album;
             albums[idx] = album0;

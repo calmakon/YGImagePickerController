@@ -33,7 +33,7 @@
     [self.contentView addSubview:_iconView];
 
     _nameLabel = [HYGUIKit labelWithFont:[UIFont systemFontOfSize:17] textColor:[UIColor blackColor] textAlignment:NSTextAlignmentLeft numberOfLines:1 text:nil];
-    _nameLabel.size = CGSizeMake(self.superview.width - 12  - _iconView.right - 10, 20);
+    _nameLabel.size = CGSizeMake(220, 20);
     _nameLabel.left = _iconView.right + 10;
     _nameLabel.top = _iconView.top;
     [self.contentView addSubview:_nameLabel];

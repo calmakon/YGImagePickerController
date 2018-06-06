@@ -12,6 +12,7 @@
 		F6ADCC6020C7D89700E4B58E /* HYGUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ADCC5E20C7D89700E4B58E /* HYGUIKit.m */; };
 		F6ADCC6320C7D8BF00E4B58E /* UIColor+HYGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ADCC6220C7D8BF00E4B58E /* UIColor+HYGExtension.m */; };
 		F6ADCC6620C7D90800E4B58E /* YGTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ADCC6520C7D90800E4B58E /* YGTableView.m */; };
+		F6ADCC6920C81F3700E4B58E /* YGSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ADCC6820C81F3600E4B58E /* YGSelectedView.m */; };
 		F6C3C4C120C7C9940083EBE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C3C4C020C7C9940083EBE5 /* AppDelegate.m */; };
 		F6C3C4C420C7C9940083EBE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C3C4C320C7C9940083EBE5 /* ViewController.m */; };
 		F6C3C4C720C7C9940083EBE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C3C4C520C7C9940083EBE5 /* Main.storyboard */; };
@@ -59,6 +60,8 @@
 		F6ADCC6220C7D8BF00E4B58E /* UIColor+HYGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HYGExtension.m"; sourceTree = "<group>"; };
 		F6ADCC6420C7D90800E4B58E /* YGTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGTableView.h; sourceTree = "<group>"; };
 		F6ADCC6520C7D90800E4B58E /* YGTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGTableView.m; sourceTree = "<group>"; };
+		F6ADCC6720C81F3600E4B58E /* YGSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGSelectedView.h; sourceTree = "<group>"; };
+		F6ADCC6820C81F3600E4B58E /* YGSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSelectedView.m; sourceTree = "<group>"; };
 		F6C3C4BC20C7C9940083EBE5 /* YGImagePickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YGImagePickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C3C4BF20C7C9940083EBE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6C3C4C020C7C9940083EBE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 		F6C3C4BE20C7C9940083EBE5 /* YGImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				F6ADCC6720C81F3600E4B58E /* YGSelectedView.h */,
+				F6ADCC6820C81F3600E4B58E /* YGSelectedView.m */,
 				F6C3C51520C7D5ED0083EBE5 /* YGImagePickerController */,
 				F6C3C4BF20C7C9940083EBE5 /* AppDelegate.h */,
 				F6C3C4C020C7C9940083EBE5 /* AppDelegate.m */,
@@ -348,6 +353,7 @@
 				F6ADCC6620C7D90800E4B58E /* YGTableView.m in Sources */,
 				F6C3C4C120C7C9940083EBE5 /* AppDelegate.m in Sources */,
 				F6C3C50F20C7D4570083EBE5 /* YGGifPreviewController.m in Sources */,
+				F6ADCC6920C81F3700E4B58E /* YGSelectedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
