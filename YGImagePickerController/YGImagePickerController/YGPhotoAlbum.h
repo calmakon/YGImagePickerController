@@ -11,6 +11,6 @@
 @class PHFetchResult;
 @interface YGPhotoAlbum : NSObject
 @property (nonatomic,copy) NSString * title;
-@property (nonatomic,assign) NSInteger count;
+@property (nonatomic,assign) NSUInteger count;
 @property (nonatomic,strong) PHFetchResult * resource;
 @end

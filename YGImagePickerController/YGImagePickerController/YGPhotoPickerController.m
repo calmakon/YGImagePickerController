@@ -32,8 +32,8 @@
     _album = album;
     [[YGPhotoManager manager] fetchAssetsFromResult:album.resource completion:^(NSArray<YGPhotoAsset *> *assets) {
         if (assets) {
-            _datas = assets;
-            _selectedPhotos = [NSMutableArray array];
+            self->_datas = assets;
+            self->_selectedPhotos = [NSMutableArray array];
         }
     }];
     return self;
@@ -49,8 +49,8 @@
     [self layoutViews];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (_collectionView.contentSize.height > self.view.height) {
-            [_collectionView setContentOffset:CGPointMake(0, _collectionView.contentSize.height - _collectionView.frame.size.height) animated:NO];
+        if (self->_collectionView.contentSize.height > self.view.height) {
+            [self->_collectionView setContentOffset:CGPointMake(0, self->_collectionView.contentSize.height - self->_collectionView.frame.size.height) animated:NO];
         }
     });
 }

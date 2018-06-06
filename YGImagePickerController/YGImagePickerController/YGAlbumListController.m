@@ -53,8 +53,8 @@
     [self.view addSubview:_tableView];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (_albums.count > 0 && [_albums[0] resource].count > 0) {
-            YGPhotoPickerController * list = [[YGPhotoPickerController alloc] initWithAlbum:_albums[0]];
+        if (self->_albums.count > 0 && [self->_albums[0] resource].count > 0) {
+            YGPhotoPickerController * list = [[YGPhotoPickerController alloc] initWithAlbum:self->_albums[0]];
             [self.navigationController pushViewController:list animated:NO];
         }
     });

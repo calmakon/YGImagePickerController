@@ -55,7 +55,7 @@
         weakSelf.iconView.image = image;
     }];
     _nameLabel.text = album.title;
-    _numLabel.text = [NSString stringWithFormat:@"(%ld)",album.count];
+    _numLabel.text = [NSString stringWithFormat:@"(%lu)",(unsigned long)album.count];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
