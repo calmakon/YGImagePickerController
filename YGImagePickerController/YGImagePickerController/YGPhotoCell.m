@@ -47,7 +47,7 @@
     _assetModel = assetModel;
     [[YGPhotoManager manager] fetchPhotoWithAsset:assetModel.asset photoWidth:_imageView.width completion:^(UIImage *image, NSDictionary *info) {
         if (image) {
-            _imageView.image = image;
+            self.imageView.image = image;
         }
     }];
     [self addTypeViewWithType:assetModel.type];

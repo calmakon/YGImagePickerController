@@ -50,8 +50,9 @@
 - (void)setAlbum:(YGPhotoAlbum *)album {
     _album = album;
 
+    __weak typeof(self) weakSelf = self;
     [[YGPhotoManager manager] fetchImageWithAlbum:album completion:^(UIImage *image) {
-        _iconView.image = image;
+        weakSelf.iconView.image = image;
     }];
     _nameLabel.text = album.title;
     _numLabel.text = [NSString stringWithFormat:@"(%ld)",album.count];

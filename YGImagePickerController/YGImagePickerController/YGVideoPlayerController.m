@@ -11,14 +11,11 @@
 #import "YGImagePickerController.h"
 #import <AVFoundation/AVFoundation.h>
 @interface YGVideoPlayerController ()
-{
-    AVPlayer * _player;
-    AVPlayerLayer * _playerLayer;
-
-    UIImage * _cover;
-    UIButton * _playBtn;
-    UIProgressView * _progressView;
-}
+@property (nonatomic,strong) AVPlayer * player;
+@property (nonatomic,strong) AVPlayerLayer * playerLayer;
+@property (nonatomic,strong) UIImage * cover;
+@property (nonatomic,strong) UIButton * playBtn;
+@property (nonatomic,strong) UIProgressView * progressView;
 @property (nonatomic,strong) YGPhotoAsset * asset;
 @property (nonatomic,strong) YGPhotoBottomBar * bottomBar;
 @end
@@ -67,18 +64,18 @@
 - (void)configPlayer {
     if (!_asset) return;
     [[YGPhotoManager manager] fetchPhotoWithAsset:_asset.asset completion:^(UIImage *image, NSDictionary *info) {
-        _cover = image;
+        self.cover = image;
     }];
     [[YGPhotoManager manager] fetchVideoWithAsset:_asset.asset completion:^(AVPlayerItem *item, NSDictionary *info) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            _player = [AVPlayer playerWithPlayerItem:item];
-            _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
-            _playerLayer.frame = self.view.bounds;
-            [self.view.layer addSublayer:_playerLayer];
+            self.player = [AVPlayer playerWithPlayerItem:item];
+            self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+            self.playerLayer.frame = self.view.bounds;
+            [self.view.layer addSublayer:self.playerLayer];
             [self addProgressObserver];
             [self configPlayButton];
 
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:_player.currentItem];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
         });
     }];
 }

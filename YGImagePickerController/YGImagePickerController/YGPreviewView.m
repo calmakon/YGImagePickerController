@@ -171,14 +171,15 @@
         asset = (PHAsset *)assetModel;
         type = [[YGPhotoManager manager] getTypeWithAsset:asset];
     }
+    __weak typeof(self) weakSelf = self;
     [[YGPhotoManager manager] fetchPhotoWithAsset:asset completion:^(UIImage *image, NSDictionary *info) {
-        _imageView.image = image;
-        [self resizeSubviews];
+        weakSelf.imageView.image = image;
+        [weakSelf resizeSubviews];
         if (type == YGPhotoAssetTypeGIF) {
             [[YGPhotoManager manager] fetchPhotoDataWithAsset:asset completion:^(NSData *imageData, NSDictionary *info) {
-                _imageView.image = [UIImage yg_gifImageWithData:imageData];
-                [self resizeSubviews];
-                self.gifImage = _imageView.image;
+                weakSelf.imageView.image = [UIImage yg_gifImageWithData:imageData];
+                [weakSelf resizeSubviews];
+                weakSelf.gifImage = weakSelf.imageView.image;
             }];
         }
     }];
