@@ -23,6 +23,10 @@ typedef void (^DidSelectedGIFImageBlock)(UIImage *gifImage,id asset);
 @property (nonatomic,assign) CGFloat photoWidth;//导出图片的宽度，默认828像素宽
 @property (nonatomic,assign) CGFloat maxPreviewPhotoWidth;//默认600像素宽
 
+//@property (nonatomic,assign) BOOL allowImage;
+//@property (nonatomic,assign) BOOL allowGIF;
+//@property (nonatomic,assign) BOOL allowVideo;
+
 //照片、视频、GIF选择回调
 @property (nonatomic,copy) DidSelectedBlock didSelectedPhotos;
 @property (nonatomic,copy) DidSelectedVideoBlock didSelectedVideo;
