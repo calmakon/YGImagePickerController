@@ -114,6 +114,7 @@
         model.type == YGPhotoAssetTypeGIF) {
         YGPhotoPreviewController * preview = [[YGPhotoPreviewController alloc] initWithPhotos:_selectAssets currentIndex:indexPath.item];
         [self.navigationController pushViewController:preview animated:YES];
+        NSLog(@"跳转");
     }
 }
 
