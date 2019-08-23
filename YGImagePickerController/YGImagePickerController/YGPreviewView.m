@@ -8,7 +8,7 @@
 
 #import "YGPreviewView.h"
 #import "YGPhotoConfig.h"
-#import "HYGUIKit.h"
+#import "utils/HYGUIKit.h"
 
 @implementation UIImage (YG_Gif)
 + (UIImage *)yg_gifImageWithData:(NSData *)imageData {

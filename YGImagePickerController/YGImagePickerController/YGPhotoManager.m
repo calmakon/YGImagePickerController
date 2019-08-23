@@ -8,7 +8,7 @@
 
 #import "YGPhotoManager.h"
 #import "YGPhotoConfig.h"
-#import "UIImage+HYGExtension.h"
+#import "extension/UIImage+HYGExtension.h"
 @interface YGPhotoManager ()
 {
     CGFloat _kScreenWidth;
