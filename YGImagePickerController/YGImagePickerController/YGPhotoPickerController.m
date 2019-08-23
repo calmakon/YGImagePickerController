@@ -8,7 +8,7 @@
 
 #import "YGPhotoPickerController.h"
 #import "YGPhotoCell.h"
-#import "UIImage+HYGExtension.h"
+#import "extension/UIImage+HYGExtension.h"
 #import "YGPhotoConfig.h"
 #import "YGVideoPlayerController.h"
 #import "YGPhotoPreviewController.h"
