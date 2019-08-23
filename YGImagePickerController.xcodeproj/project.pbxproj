@@ -126,28 +126,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F6B7CD7B20C90F58008F14DF /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				F6ADCC6120C7D8BF00E4B58E /* UIColor+HYGExtension.h */,
-				F6ADCC6220C7D8BF00E4B58E /* UIColor+HYGExtension.m */,
-				F6ADCC5820C7D85200E4B58E /* UIImage+HYGExtension.h */,
-				F6ADCC5A20C7D85200E4B58E /* UIImage+HYGExtension.m */,
-				F6ADCC5920C7D85200E4B58E /* UIView+HYGExtension.h */,
-				F6ADCC5B20C7D85200E4B58E /* UIView+HYGExtension.m */,
-			);
-			path = extension;
-			sourceTree = "<group>";
-		};
-		F6B7CD7C20C90F6F008F14DF /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				F6ADCC5F20C7D89700E4B58E /* HYGUIKit.h */,
-				F6ADCC5E20C7D89700E4B58E /* HYGUIKit.m */,
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
 		F6C3C4B320C7C9940083EBE5 = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +186,15 @@
 		F6C3C51520C7D5ED0083EBE5 /* YGImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				F6B7CD7C20C90F6F008F14DF /* utils */,
-				F6B7CD7B20C90F58008F14DF /* extension */,
 				F6C3C4E920C7D4560083EBE5 /* images */,
+				F6ADCC5F20C7D89700E4B58E /* HYGUIKit.h */,
+				F6ADCC5E20C7D89700E4B58E /* HYGUIKit.m */,
+				F6ADCC6120C7D8BF00E4B58E /* UIColor+HYGExtension.h */,
+				F6ADCC6220C7D8BF00E4B58E /* UIColor+HYGExtension.m */,
+				F6ADCC5820C7D85200E4B58E /* UIImage+HYGExtension.h */,
+				F6ADCC5A20C7D85200E4B58E /* UIImage+HYGExtension.m */,
+				F6ADCC5920C7D85200E4B58E /* UIView+HYGExtension.h */,
+				F6ADCC5B20C7D85200E4B58E /* UIView+HYGExtension.m */,
 				F6ADCC6420C7D90800E4B58E /* YGTableView.h */,
 				F6ADCC6520C7D90800E4B58E /* YGTableView.m */,
 				F6C3C4F520C7D4560083EBE5 /* YGAlbumListController.h */,

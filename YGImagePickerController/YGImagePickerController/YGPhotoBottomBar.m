@@ -7,7 +7,7 @@
 //
 
 #import "YGPhotoBottomBar.h"
-#import "extension/UIView+HYGExtension.h"
+#import "UIView+HYGExtension.h"
 
 #define kAnimateDuration 0.2f
 #define kAnimatedScale 1.2f

@@ -8,9 +8,9 @@
 
 #ifndef YGPhotoConfig_h
 #define YGPhotoConfig_h
-#import "extension/UIView+HYGExtension.h"
-#import "utils/HYGUIKit.h"
-#import "extension/UIColor+HYGExtension.h"
+#import "UIView+HYGExtension.h"
+#import "HYGUIKit.h"
+#import "UIColor+HYGExtension.h"
 #import "YGPhotoManager.h"
 #import <Photos/Photos.h>
 #import "YGPhotoAlbum.h"
