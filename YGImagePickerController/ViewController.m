@@ -29,6 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self layoutViews];
+
+    NSLog(@"添加一行打印");
 }
 
 - (void)layoutViews {
