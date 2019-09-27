@@ -32,6 +32,8 @@
 
     NSLog(@"添加一行打印");
     NSLog(@"添加第二行打印");
+
+    NSLog(@"bugfix");
 }
 
 - (void)layoutViews {
