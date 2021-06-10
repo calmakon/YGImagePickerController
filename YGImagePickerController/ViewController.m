@@ -29,11 +29,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self layoutViews];
-
-    NSLog(@"添加一行打印");
-    NSLog(@"添加第二行打印");
-
-    NSLog(@"bugfix");
 }
 
 - (void)layoutViews {
@@ -69,6 +64,7 @@
     picker.barTitleColor = [UIColor whiteColor];
     picker.barTitleFont = [UIFont systemFontOfSize:18];
     picker.maxSelectedCount = 4;
+    picker.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:picker animated:YES completion:nil];
 
     //选择照片
