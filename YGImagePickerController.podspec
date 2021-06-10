@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "YGImagePickerController"
-  s.version      = "1.0.5"
+  s.version      = "1.1.0"
   s.summary      = "a pick image tool,support picking multiple photos、gif and video"
   s.homepage     = "https://github.com/calmakon/YGImagePickerController"
   s.license      = "MIT"
