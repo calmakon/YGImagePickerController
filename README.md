@@ -3,6 +3,10 @@
 2.底层库PhotoKit,仅支持iOS 8之后
 3.支持CocoaPods导入
 
+## 最近更新
+1.适配x、12系列
+2.支持Dark Mode
+3.适配iOS 11以上
 ## 使用
 ```
 YGImagePickerController * picker = [YGImagePickerController new];
