@@ -8,7 +8,7 @@
 
 #import "YGPhotoBottomBar.h"
 #import "UIView+HYGExtension.h"
-
+#import "HYGUIKit.h"
 #define kAnimateDuration 0.2f
 #define kAnimatedScale 1.2f
 #define kAnimatedSmallScale 0.9f
@@ -40,13 +40,13 @@
     CGFloat barHeight = DEVICE_IS_X?83:49;
     self.size = CGSizeMake([UIScreen mainScreen].bounds.size.width, barHeight);
     CALayer * topLine = [[CALayer alloc] init];
-    topLine.frame = CGRectMake(0, 0, self.width, 1);
+    topLine.frame = CGRectMake(0, 0, self.width, 0.5);
     [self.layer addSublayer:topLine];
     if (isCollection) {
-        self.backgroundColor = [UIColor whiteColor];
-        topLine.backgroundColor = [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1].CGColor;
+        self.backgroundColor = [HYGUIKit dynamicColorLight:[UIColor whiteColor] dark:[UIColor blackColor]]?:[UIColor whiteColor];
+        topLine.backgroundColor = ([HYGUIKit dynamicColorLight:[UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1] dark:[UIColor colorWithRed:0.52 green:0.52 blue:0.52 alpha:1]]?:[UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1]).CGColor;
     }else {
-        self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.5];
+        self.backgroundColor = [HYGUIKit dynamicColorLight:[UIColor colorWithWhite:0.2 alpha:0.5] dark:[UIColor colorWithWhite:0 alpha:0.5]]?:[UIColor colorWithWhite:0.2 alpha:0.5];
         topLine.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8].CGColor;
     }
 
@@ -57,8 +57,10 @@
     _previewButton.top = 0;
     [_previewButton setTitle:@"预览" forState:UIControlStateNormal];
     _previewButton.titleLabel.font = [UIFont systemFontOfSize:17];
-    [_previewButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_previewButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    UIColor *normalColor = [HYGUIKit dynamicColorLight:[UIColor darkTextColor] dark:[UIColor lightTextColor]]?:[UIColor darkTextColor];
+    UIColor *disabledColor = [HYGUIKit dynamicColorLight:[UIColor lightGrayColor] dark:[UIColor darkGrayColor]]?:[UIColor lightGrayColor];
+    [_previewButton setTitleColor:normalColor forState:UIControlStateNormal];
+    [_previewButton setTitleColor:disabledColor forState:UIControlStateDisabled];
     _previewButton.enabled = NO;
     [_previewButton addTarget:self action:@selector(previewClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_previewButton];
@@ -69,11 +71,11 @@
     _confirmButton.right = self.width - 15;
     _confirmButton.top = 10;
     _confirmButton.layer.cornerRadius = 5;
-    _confirmButton.backgroundColor = [UIColor colorWithRed:0.46 green:0.77 blue:0.44 alpha:1];
+    _confirmButton.backgroundColor = [UIColor colorWithRed:0.46 green:0.77 blue:0.44 alpha:0.6];
     [_confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     _confirmButton.titleLabel.font = [UIFont systemFontOfSize:17];
     [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_confirmButton setTitleColor:[UIColor colorWithWhite:0.3 alpha:1] forState:UIControlStateDisabled];
+    [_confirmButton setTitleColor:[UIColor colorWithWhite:0.6 alpha:1] forState:UIControlStateDisabled];
     [_confirmButton addTarget:self action:@selector(confirmClick) forControlEvents:UIControlEventTouchUpInside];
     _confirmButton.enabled = NO;
     [self addSubview:_confirmButton];
@@ -103,7 +105,7 @@
     }else {
         _previewButton.enabled = NO;
         _confirmButton.enabled = NO;
-        _confirmButton.backgroundColor = [UIColor colorWithRed:0.46 green:0.77 blue:0.44 alpha:1];
+        _confirmButton.backgroundColor = [UIColor colorWithRed:0.46 green:0.77 blue:0.44 alpha:0.6];
         _confirmButton.width = 60;
         _confirmButton.right = self.width - 15;
         [_confirmButton setTitle:@"确定" forState:UIControlStateNormal];

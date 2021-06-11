@@ -95,4 +95,6 @@
  @param delegate 代理
  */
 + (UIWebView *)webViewWithDelegate:(id<UIWebViewDelegate>)delegate;
+
++ (UIColor *)dynamicColorLight:(UIColor *)lightColor dark:(UIColor *)darkColor;
 @end

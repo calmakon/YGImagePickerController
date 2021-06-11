@@ -119,9 +119,9 @@
     }
 }
 
-- (void)dealloc {
-    NSLog(@"%@控制器销毁",[self class]);
-}
+//- (void)dealloc {
+//    NSLog(@"%@控制器销毁",[self class]);
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

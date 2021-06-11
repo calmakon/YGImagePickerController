@@ -108,4 +108,17 @@
     return webView;
 }
 
++ (UIColor *)dynamicColorLight:(UIColor *)lightColor dark:(UIColor *)darkColor {
+    if (@available(iOS 13,*)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return darkColor;
+            }else {
+                return lightColor;
+            }
+        }];
+    }
+    return nil;
+}
+
 @end

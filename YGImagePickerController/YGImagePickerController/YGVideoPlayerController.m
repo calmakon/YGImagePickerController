@@ -100,7 +100,7 @@
     CMTime currentTime = _player.currentItem.currentTime;
     CMTime durationTime = _player.currentItem.duration;
     if (_player.rate == 0.0f) {
-        if (currentTime.value == durationTime.value) [_player.currentItem seekToTime:CMTimeMake(0, 1)];
+        if (currentTime.value == durationTime.value) [_player.currentItem seekToTime:CMTimeMake(0, 1) completionHandler:nil];
         [_player play];
         [self.navigationController setNavigationBarHidden:YES];
         [_playBtn setImage:nil forState:UIControlStateNormal];

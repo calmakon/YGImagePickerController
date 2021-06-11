@@ -35,7 +35,8 @@
     [super viewDidLoad];
     self.navigationItem.title = @"相册列表";
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [HYGUIKit dynamicColorLight:[UIColor whiteColor] dark:[UIColor blackColor]]?:[UIColor whiteColor];
+
     [self layoutViews];
 }
 

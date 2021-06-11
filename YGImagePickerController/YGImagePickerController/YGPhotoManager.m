@@ -96,6 +96,12 @@
             albums[0] = album;
             albums[idx] = album0;
             *stop = YES;
+        }else if ([album.title containsString:@"Recents"] ||
+                  [album.title containsString:@"最近项目"]) {
+            YGPhotoAlbum * album0 = albums[0];
+            albums[0] = album;
+            albums[idx] = album0;
+            *stop = YES;
         }
     }];
 
@@ -110,7 +116,7 @@
             [albums addObject:album];
         }
     }];
-    NSLog(@"相册个数:%lu",(unsigned long)albums.count);
+    //NSLog(@"相册个数:%lu",(unsigned long)albums.count);
     return albums.copy;
 }
 

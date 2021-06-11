@@ -44,7 +44,7 @@
     [super viewDidLoad];
     self.navigationItem.title = _album.title;
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [HYGUIKit dynamicColorLight:[UIColor whiteColor] dark:[UIColor blackColor]]?:[UIColor whiteColor];
 
     [self layoutViews];
 
@@ -68,7 +68,7 @@
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
 
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 44) collectionViewLayout:layout];
-    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.backgroundColor = self.view.backgroundColor;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     [self.view addSubview:_collectionView];

@@ -32,13 +32,16 @@
     _iconView.centerY = kYGAlbumCellHeight / 2.0f;
     [self.contentView addSubview:_iconView];
 
-    _nameLabel = [HYGUIKit labelWithFont:[UIFont systemFontOfSize:17] textColor:[UIColor blackColor] textAlignment:NSTextAlignmentLeft numberOfLines:1 text:nil];
+
+    UIColor *textColor = [HYGUIKit dynamicColorLight:[UIColor darkTextColor] dark:[UIColor lightTextColor]]?:[UIColor blackColor];
+    _nameLabel = [HYGUIKit labelWithFont:[UIFont systemFontOfSize:17] textColor:textColor textAlignment:NSTextAlignmentLeft numberOfLines:1 text:nil];
     _nameLabel.size = CGSizeMake(220, 20);
     _nameLabel.left = _iconView.right + 10;
     _nameLabel.top = _iconView.top;
     [self.contentView addSubview:_nameLabel];
 
-    _numLabel = [HYGUIKit labelWithFont:[UIFont systemFontOfSize:15] textColor:[UIColor lightGrayColor] textAlignment:NSTextAlignmentLeft numberOfLines:1 text:nil];
+    UIColor *grayColor = [HYGUIKit dynamicColorLight:[UIColor lightGrayColor] dark:[UIColor darkGrayColor]]?:[UIColor lightGrayColor];
+    _numLabel = [HYGUIKit labelWithFont:[UIFont systemFontOfSize:15] textColor:grayColor textAlignment:NSTextAlignmentLeft numberOfLines:1 text:nil];
     _numLabel.size = CGSizeMake(120, 20);
     _numLabel.left = _iconView.right + 10;
     _numLabel.top = _nameLabel.bottom + 10;
